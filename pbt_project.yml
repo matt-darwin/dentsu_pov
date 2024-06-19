@@ -1,7 +1,7 @@
 name: nyc_taxi_engineering
 description: Load and transform the raw NYC taxi data from four different files into
   a combined table
-version: 0.0.7
+version: 0.0.1
 author: matthew+public_demo@prophecy.io
 language: python
 buildSystem: ''
