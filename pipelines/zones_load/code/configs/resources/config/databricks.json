@@ -1,0 +1,4 @@
+{
+  "storage_location" : "dbfs:/nyc_taxi/raw/zone_lookup/",
+  "provider" : "databricks"
+}

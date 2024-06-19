@@ -1,0 +1,1174 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "7.1.97",
+        "pyPiVersion" : "1.8.19"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/weather_data",
+    "pipelineSettingsInfo" : {
+      "hasApplication" : false
+    },
+    "language" : "python",
+    "fabricId" : "10584",
+    "frontEndLanguage" : "python",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "matthewpublicdemoprophecyioteam.nyctaxiengineering.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "latitude",
+          "kind" : {
+            "type" : "string",
+            "value" : "74.0060"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "longitude",
+          "kind" : {
+            "type" : "string",
+            "value" : "40.7128"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "start_date",
+          "kind" : {
+            "type" : "string",
+            "value" : "2024-01-01"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "end_date",
+          "kind" : {
+            "type" : "string",
+            "value" : "2024-01-31"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "json_schema",
+          "kind" : {
+            "type" : "string",
+            "value" : "STRUCT<latitude:DECIMAL(6,4),longitude:DECIMAL(6,4),generationtime_ms: DECIMAL(10,4),timezone:STRING,timezone_abbreviation:STRING,daily:STRUCT<time:ARRAY<STRING>,precipitation_sum:ARRAY<DECIMAL(4,1)>>,daily_units: STRING>"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "storage_bucket",
+          "kind" : {
+            "type" : "string",
+            "value" : "gs://md-demo-prophecy-demo-dataproc-config/nyc_taxi/transformed/"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "provider",
+          "kind" : {
+            "type" : "string",
+            "value" : "gcp"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "databricks",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ {
+      "name" : "spark.sql.sources.partitionOverwriteMode",
+      "value" : "dynamic"
+    } ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "weather_data",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "4iCzhk_nDKiNFxvrRXLWA",
+    "source" : "lqMgu8LaPn2U8jETEo9Lo$$Rs73ucJ9MeBtwu4TCUZr-",
+    "sourcePort" : "Vs_iu2M8zW2sB-aDiKoKL$$wbRVfZQGUEBAO1V9jsbhb",
+    "target" : "wtssgBdjRsbV_H6vulpGE$$jiSvS2WyefGNso8JYGoRh",
+    "targetPort" : "HJVbCd2AyKvrgwlLUqDRS$$TvO3sCe2MGSIT9iTfoFJO"
+  }, {
+    "id" : "sNCYtjbJHTu2TCzmhVDdG$$b6JCmn8bPw1VoaphBY9M3",
+    "source" : "wtssgBdjRsbV_H6vulpGE$$jiSvS2WyefGNso8JYGoRh",
+    "sourcePort" : "qiAMPZObhtb3rNPEh8DAk$$H9axbhcTW0pc_nDAhRamg",
+    "target" : "39-QwE2D36Eqy0R0atYyc$$6bJMsiZQ7PHrfsic9Q9OB",
+    "targetPort" : "UubNpoTDV-rDtw1gVr83a$$4JctW731IMFUQ7YTEourT"
+  }, {
+    "id" : "2saP1mDNM945NHCeatBA_$$CuvLi8STE4Iqgjxuf_2nk",
+    "source" : "39-QwE2D36Eqy0R0atYyc$$6bJMsiZQ7PHrfsic9Q9OB",
+    "sourcePort" : "3v6OGcFJRfb4B2htsxgMN$$uv9p3C0DzL5C2Re18WOsS",
+    "target" : "1TsVX4U_yBAht8-7emb1B$$utAIgCEWaXbSm49plWBRY",
+    "targetPort" : "2RoxdkfOENOl1JpzZm_qV$$H0w3_AGJ2bh7ilPKGc6ks"
+  }, {
+    "id" : "4SiZKPrUMbKeR9Lfm5-MC",
+    "source" : "39-QwE2D36Eqy0R0atYyc$$6bJMsiZQ7PHrfsic9Q9OB",
+    "sourcePort" : "3v6OGcFJRfb4B2htsxgMN$$uv9p3C0DzL5C2Re18WOsS",
+    "target" : "NnVVgHJ7xSge0y85ej7s5$$7KgcIvIh0-Qx8goLLPLfV",
+    "targetPort" : "9Vhpt6bJVvP5T3GCIXLSQ$$6AJNyPrsPxL5cEKwXZcMr"
+  }, {
+    "id" : "XZ51ger2txaidfwwtHpN4$$7SDS0-75c3FuJcGASd1Oz",
+    "source" : "9rC1bAswNMc3vb09p323u$$AdJDlSl-EzTrtQDSAab34",
+    "sourcePort" : "7ZkpHW_1dqRoAusMquOJQ$$P5JMpCeBB6DveKsvMNj9g",
+    "target" : "lqMgu8LaPn2U8jETEo9Lo$$Rs73ucJ9MeBtwu4TCUZr-",
+    "targetPort" : "FqyajHXf8A28jpVxwr-Wz$$rmgtS-p-A3UWFUlGXBC31"
+  } ],
+  "processes" : {
+    "39-QwE2D36Eqy0R0atYyc$$6bJMsiZQ7PHrfsic9Q9OB" : {
+      "id" : "39-QwE2D36Eqy0R0atYyc$$6bJMsiZQ7PHrfsic9Q9OB",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "add_year_month_columns",
+        "slug" : "add_year_month_columns",
+        "x" : -60,
+        "y" : -160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UubNpoTDV-rDtw1gVr83a$$4JctW731IMFUQ7YTEourT",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "json_content_latitude",
+              "type" : "decimal(6,4)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "json_content_longitude",
+              "type" : "decimal(6,4)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "metrics_time",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "metrics_precipitation_sum",
+              "type" : "decimal(4,1)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "3v6OGcFJRfb4B2htsxgMN$$uv9p3C0DzL5C2Re18WOsS",
+          "slug" : "out",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "json_content_latitude",
+              "type" : "decimal(6,4)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "json_content_longitude",
+              "type" : "decimal(6,4)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "metrics_time",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "metrics_precipitation_sum",
+              "type" : "decimal(4,1)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "year",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "month",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : true
+      },
+      "properties" : {
+        "importLanguage" : "sql",
+        "importString" : "",
+        "transformations" : [ {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddReplaceColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "year",
+            "expression" : {
+              "format" : "python",
+              "expression" : "year(col(\"metrics_time\"))"
+            }
+          }
+        }, {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddReplaceColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "month",
+            "expression" : {
+              "format" : "python",
+              "expression" : "month(col(\"metrics_time\"))"
+            }
+          }
+        }, {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddReplaceColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "metrics_time",
+            "expression" : {
+              "format" : "python",
+              "expression" : "to_date( col(\"metrics_time\"))"
+            }
+          }
+        } ],
+        "activeTab" : "transformations",
+        "columnsSelector" : [ "UubNpoTDV-rDtw1gVr83a$$4JctW731IMFUQ7YTEourT##metrics_time" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.14&projectSubscriptionProjectId=12654&path=gems/SchemaTransform",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "lqMgu8LaPn2U8jETEo9Lo$$Rs73ucJ9MeBtwu4TCUZr-" : {
+      "id" : "lqMgu8LaPn2U8jETEo9Lo$$Rs73ucJ9MeBtwu4TCUZr-",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "SchemaTransform_1_2",
+        "slug" : "SchemaTransform_1_2",
+        "x" : -400,
+        "y" : -160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "FqyajHXf8A28jpVxwr-Wz$$rmgtS-p-A3UWFUlGXBC31",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "url",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "content",
+              "type" : "binary",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "json_content",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "latitude",
+                  "type" : "decimal(6,4)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "longitude",
+                  "type" : "decimal(6,4)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "generationtime_ms",
+                  "type" : "decimal(10,4)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "timezone",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "timezone_abbreviation",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "daily",
+                  "type" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "time",
+                      "type" : {
+                        "type" : "array",
+                        "elementType" : "string",
+                        "containsNull" : true
+                      },
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "precipitation_sum",
+                      "type" : {
+                        "type" : "array",
+                        "elementType" : "decimal(4,1)",
+                        "containsNull" : true
+                      },
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "daily_units",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "Vs_iu2M8zW2sB-aDiKoKL$$wbRVfZQGUEBAO1V9jsbhb",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "sql",
+        "importString" : "",
+        "transformations" : [ {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddReplaceColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "metrics",
+            "expression" : {
+              "format" : "python",
+              "expression" : "arrays_zip(col(\"json_content.daily.time\"),col(\"json_content.daily.precipitation_sum\"))"
+            }
+          }
+        } ],
+        "activeTab" : "transformations",
+        "columnsSelector" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.14&projectSubscriptionProjectId=12654&path=gems/SchemaTransform",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "9rC1bAswNMc3vb09p323u$$AdJDlSl-EzTrtQDSAab34" : {
+      "id" : "9rC1bAswNMc3vb09p323u$$AdJDlSl-EzTrtQDSAab34",
+      "component" : "WeatherDataGet",
+      "metadata" : {
+        "label" : "weather_data_get",
+        "slug" : "weather_data_get",
+        "x" : -560,
+        "y" : -160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "7ZkpHW_1dqRoAusMquOJQ$$P5JMpCeBB6DveKsvMNj9g",
+          "slug" : "out",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "url",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "content",
+              "type" : "binary",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "json_content",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "latitude",
+                  "type" : "decimal(6,4)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "longitude",
+                  "type" : "decimal(6,4)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "generationtime_ms",
+                  "type" : "decimal(10,4)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "timezone",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "timezone_abbreviation",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "daily",
+                  "type" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "time",
+                      "type" : {
+                        "type" : "array",
+                        "elementType" : "string",
+                        "containsNull" : true
+                      },
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "precipitation_sum",
+                      "type" : {
+                        "type" : "array",
+                        "elementType" : "decimal(4,1)",
+                        "containsNull" : true
+                      },
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "daily_units",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : true
+      },
+      "properties" : {
+        "startdate" : "Config.start_date",
+        "enddate" : "Config.end_date",
+        "latitude" : "Config.latitude",
+        "longitude" : "Config.longitude"
+      },
+      "componentInfo" : {
+        "gemId" : "gems/WeatherDataGet",
+        "projectName" : "nyc_taxi_engineering"
+      }
+    },
+    "wtssgBdjRsbV_H6vulpGE$$jiSvS2WyefGNso8JYGoRh" : {
+      "id" : "wtssgBdjRsbV_H6vulpGE$$jiSvS2WyefGNso8JYGoRh",
+      "component" : "FlattenSchema",
+      "metadata" : {
+        "label" : "flatten_json_schema_2",
+        "slug" : "flatten_json_schema_2",
+        "x" : -220,
+        "y" : -160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "HJVbCd2AyKvrgwlLUqDRS$$TvO3sCe2MGSIT9iTfoFJO",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "url",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "content",
+              "type" : "binary",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "json_content",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "latitude",
+                  "type" : "decimal(6,4)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "longitude",
+                  "type" : "decimal(6,4)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "generationtime_ms",
+                  "type" : "decimal(10,4)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "timezone",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "timezone_abbreviation",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "daily",
+                  "type" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "time",
+                      "type" : {
+                        "type" : "array",
+                        "elementType" : "string",
+                        "containsNull" : true
+                      },
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "precipitation_sum",
+                      "type" : {
+                        "type" : "array",
+                        "elementType" : "decimal(4,1)",
+                        "containsNull" : true
+                      },
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "daily_units",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "metrics",
+              "type" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "struct",
+                  "fields" : [ {
+                    "name" : "time",
+                    "type" : "string",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "precipitation_sum",
+                    "type" : "decimal(4,1)",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  } ]
+                },
+                "containsNull" : false
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "qiAMPZObhtb3rNPEh8DAk$$H9axbhcTW0pc_nDAhRamg",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "explodedColsNewName" : [ {
+          "originalColToExplode" : "metrics",
+          "updatedColToExplode" : "metrics",
+          "colNameAfterExplode" : "metrics"
+        } ],
+        "fsExpressions" : [ {
+          "exploded" : "",
+          "flattenedExpression" : "json_content.latitude",
+          "expression" : {
+            "format" : "python",
+            "expression" : "col(\"json_content.latitude\")"
+          },
+          "targetTokens" : [ "json_content", "latitude" ],
+          "target" : "json_content_latitude"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "json_content.longitude",
+          "expression" : {
+            "format" : "python",
+            "expression" : "col(\"json_content.longitude\")"
+          },
+          "targetTokens" : [ "json_content", "longitude" ],
+          "target" : "json_content_longitude"
+        }, {
+          "exploded" : "✓",
+          "flattenedExpression" : "metrics.time",
+          "expression" : {
+            "format" : "python",
+            "expression" : "col(\"metrics.time\")"
+          },
+          "targetTokens" : [ "metrics", "time" ],
+          "target" : "metrics_time"
+        }, {
+          "exploded" : "✓",
+          "flattenedExpression" : "metrics.precipitation_sum",
+          "expression" : {
+            "format" : "python",
+            "expression" : "col(\"metrics.precipitation_sum\")"
+          },
+          "targetTokens" : [ "metrics", "precipitation_sum" ],
+          "target" : "metrics_precipitation_sum"
+        } ],
+        "columnsSelector" : [ "HJVbCd2AyKvrgwlLUqDRS$$TvO3sCe2MGSIT9iTfoFJO##metrics.precipitation_sum", "HJVbCd2AyKvrgwlLUqDRS$$TvO3sCe2MGSIT9iTfoFJO##metrics", "HJVbCd2AyKvrgwlLUqDRS$$TvO3sCe2MGSIT9iTfoFJO##json_content", "HJVbCd2AyKvrgwlLUqDRS$$TvO3sCe2MGSIT9iTfoFJO##metrics.time", "HJVbCd2AyKvrgwlLUqDRS$$TvO3sCe2MGSIT9iTfoFJO##json_content.longitude", "HJVbCd2AyKvrgwlLUqDRS$$TvO3sCe2MGSIT9iTfoFJO##json_content.latitude" ],
+        "explodeColumns" : [ ],
+        "delimiter" : "_"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.14&projectSubscriptionProjectId=12654&path=gems/FlattenSchema",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "NnVVgHJ7xSge0y85ej7s5$$7KgcIvIh0-Qx8goLLPLfV" : {
+      "id" : "NnVVgHJ7xSge0y85ej7s5$$7KgcIvIh0-Qx8goLLPLfV",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "weather_precipitation_sum_dbx",
+        "slug" : "weather_precipitation_sum_dbx",
+        "x" : 120,
+        "y" : -100,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "removalCondition" : "Config.provider == 'databricks'"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9Vhpt6bJVvP5T3GCIXLSQ$$6AJNyPrsPxL5cEKwXZcMr",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "json_content_latitude",
+              "type" : "decimal(6,4)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "json_content_longitude",
+              "type" : "decimal(6,4)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "metrics_time",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "metrics_precipitation_sum",
+              "type" : "decimal(4,1)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "year",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "month",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/weather_precipitation_sum_dbx"
+      }
+    },
+    "1TsVX4U_yBAht8-7emb1B$$utAIgCEWaXbSm49plWBRY" : {
+      "id" : "1TsVX4U_yBAht8-7emb1B$$utAIgCEWaXbSm49plWBRY",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "weather_precipitation_sum",
+        "slug" : "weather_precipitation_sum",
+        "x" : 120,
+        "y" : -280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "removalCondition" : "Config.provider == 'gcp'"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "2RoxdkfOENOl1JpzZm_qV$$H0w3_AGJ2bh7ilPKGc6ks",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "json_content_latitude",
+              "type" : "decimal(6,4)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "json_content_longitude",
+              "type" : "decimal(6,4)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "metrics_time",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "metrics_precipitation_sum",
+              "type" : "decimal(4,1)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "year",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "month",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/weather_precipitation_sum"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

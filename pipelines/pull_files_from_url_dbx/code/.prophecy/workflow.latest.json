@@ -1,0 +1,188 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "7.1.97",
+        "pyPiVersion" : "1.8.19"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/pull_files_from_url_dbx",
+    "pipelineSettingsInfo" : {
+      "applicationName" : "pull_files_from_url_dbx",
+      "hasApplication" : true
+    },
+    "language" : "python",
+    "fabricId" : "10584",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "matthewpublicdemoprophecyioteam.nyctaxiengineering.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "pull_files_from_url_dbx",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ ],
+  "processes" : {
+    "1KAz-t9yAGBbuv9CtS7rR$$y7_7Ue9yrO0p-Rf6N01C4" : {
+      "id" : "1KAz-t9yAGBbuv9CtS7rR$$y7_7Ue9yrO0p-Rf6N01C4",
+      "component" : "FileURLDownload",
+      "metadata" : {
+        "label" : "zones_download",
+        "slug" : "zones_download",
+        "x" : -2080,
+        "y" : -1640,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "file_url" : "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv",
+        "file_name" : "taxi_zone_lookup.csv",
+        "target_bucket" : "",
+        "service_account_file_path" : "",
+        "target_bucket_filepath" : "",
+        "platform" : "Databricks",
+        "dbfs_path" : "dbfs:/nyc_taxi/raw/zone_lookup/",
+        "gcp_project" : ""
+      },
+      "componentInfo" : {
+        "gemId" : "gems/FileURLDownload",
+        "projectName" : "nyc_taxi_engineering"
+      }
+    },
+    "xm2M6V_mOXXeJPQG5XjIk$$5uUY5durpfnLpbF-Cb4eL" : {
+      "id" : "xm2M6V_mOXXeJPQG5XjIk$$5uUY5durpfnLpbF-Cb4eL",
+      "component" : "FileURLDownload",
+      "metadata" : {
+        "label" : "Yellow_Download",
+        "slug" : "Yellow_Download",
+        "x" : -1920,
+        "y" : -1640,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "file_url" : "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet",
+        "file_name" : "yellow_tripdata_2024-01.parquet",
+        "target_bucket" : "",
+        "service_account_file_path" : "",
+        "target_bucket_filepath" : "",
+        "platform" : "Databricks",
+        "dbfs_path" : "dbfs:/nyc_taxi/raw/yellow/2024/01/",
+        "gcp_project" : ""
+      },
+      "componentInfo" : {
+        "gemId" : "gems/FileURLDownload",
+        "projectName" : "nyc_taxi_engineering"
+      }
+    },
+    "ZNM16xEANYXgWCvcszShO$$H4R8lsu0GUHNRmww7AgEf" : {
+      "id" : "ZNM16xEANYXgWCvcszShO$$H4R8lsu0GUHNRmww7AgEf",
+      "component" : "FileURLDownload",
+      "metadata" : {
+        "label" : "Green_Download",
+        "slug" : "Green_Download",
+        "x" : -1760,
+        "y" : -1640,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "file_url" : "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2024-01.parquet",
+        "file_name" : "green_tripdata_2024-01.parquet",
+        "target_bucket" : "",
+        "service_account_file_path" : "",
+        "target_bucket_filepath" : "",
+        "platform" : "Databricks",
+        "dbfs_path" : "dbfs:/nyc_taxi/raw/green/2024/01/",
+        "gcp_project" : ""
+      },
+      "componentInfo" : {
+        "gemId" : "gems/FileURLDownload",
+        "projectName" : "nyc_taxi_engineering"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

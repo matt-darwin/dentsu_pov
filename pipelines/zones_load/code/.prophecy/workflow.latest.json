@@ -1,0 +1,277 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "7.1.97",
+        "pyPiVersion" : "1.8.19"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/zones_load",
+    "language" : "python",
+    "fabricId" : "10584",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "matthewpublicdemoprophecyioteam.nyctaxiengineering.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "storage_location",
+          "kind" : {
+            "type" : "string",
+            "value" : "gs://md-demo-prophecy-demo-dataproc-config/nyc_taxi/raw/"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "provider",
+          "kind" : {
+            "type" : "string",
+            "value" : "gcp"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "databricks",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ {
+      "name" : "spark.databricks.delta.schema.autoMerge.enabled",
+      "value" : "true"
+    } ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "zones_load",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "fm9sf2dSznl1m9O-HV0DJ$$JYUTQ5KgaK0FEYWbiY6pd",
+    "source" : "wUFm2yiLDa79rOlyhAenm$$QtCoOJy1HezdokyKbRzVU",
+    "sourcePort" : "RfjCbLjoQyF4MyXjeq3L7$$EKih87APjk5zn1yx6qUsf",
+    "target" : "uRuaPNqnINKb8zgyz1YR9$$goEf4WrL6enFlPCQaJS1m",
+    "targetPort" : "2eX2z4lWs5aYc3RFdnWlF$$2noV7r-xPawxraCKN2EYb"
+  }, {
+    "id" : "cnApTBS9-RhhD-IZMf9jA",
+    "source" : "wUFm2yiLDa79rOlyhAenm$$QtCoOJy1HezdokyKbRzVU",
+    "sourcePort" : "RfjCbLjoQyF4MyXjeq3L7$$EKih87APjk5zn1yx6qUsf",
+    "target" : "HsL5f4PKa9SBp7DO4BEJ1$$s4Y0-PJ5Jwno_iknYArDS",
+    "targetPort" : "zxNHgTvhRnFjeIYuzzTYd$$U-cqh1MuF_tG3wvUl6xXB"
+  } ],
+  "processes" : {
+    "wUFm2yiLDa79rOlyhAenm$$QtCoOJy1HezdokyKbRzVU" : {
+      "id" : "wUFm2yiLDa79rOlyhAenm$$QtCoOJy1HezdokyKbRzVU",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "zones_load",
+        "slug" : "zones_load",
+        "x" : -520,
+        "y" : -200,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "RfjCbLjoQyF4MyXjeq3L7$$EKih87APjk5zn1yx6qUsf",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/zones_load"
+      }
+    },
+    "uRuaPNqnINKb8zgyz1YR9$$goEf4WrL6enFlPCQaJS1m" : {
+      "id" : "uRuaPNqnINKb8zgyz1YR9$$goEf4WrL6enFlPCQaJS1m",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "zones_gcp_transformed",
+        "slug" : "zones_gcp_transformed",
+        "x" : -300,
+        "y" : -280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "removalCondition" : "Config.provider == 'gcp'"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "2eX2z4lWs5aYc3RFdnWlF$$2noV7r-xPawxraCKN2EYb",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "LocationID",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Borough",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Zone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "service_zone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/zones_gcp_transformed"
+      }
+    },
+    "HsL5f4PKa9SBp7DO4BEJ1$$s4Y0-PJ5Jwno_iknYArDS" : {
+      "id" : "HsL5f4PKa9SBp7DO4BEJ1$$s4Y0-PJ5Jwno_iknYArDS",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "zones",
+        "slug" : "zones",
+        "x" : -300,
+        "y" : -120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "removalCondition" : "Config.provider == 'databricks'"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "zxNHgTvhRnFjeIYuzzTYd$$U-cqh1MuF_tG3wvUl6xXB",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "LocationID",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Borough",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Zone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "service_zone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/zones"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

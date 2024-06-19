@@ -1,0 +1,1367 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "7.1.102",
+        "pyPiVersion" : "1.8.19"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/yellow_taxi_raw",
+    "language" : "python",
+    "fabricId" : "10584",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "matthewpublicdemoprophecyioteam.nyctaxiengineering.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "taxi_type",
+          "kind" : {
+            "type" : "string",
+            "value" : "yellow_data"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "year",
+          "kind" : {
+            "type" : "string",
+            "value" : "2024"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "month",
+          "kind" : {
+            "type" : "string",
+            "value" : "01"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "cloud_storage_path",
+          "kind" : {
+            "type" : "string",
+            "value" : "gs://md-demo-prophecy-demo-dataproc-config/nyc_taxi/raw/"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "provider",
+          "kind" : {
+            "type" : "string",
+            "value" : "gcp"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "databricks",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ {
+      "name" : "spark.sql.sources.partitionOverwriteMode",
+      "value" : "dynamic"
+    } ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "yellow_taxi_raw",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "KDoPVA5pzbk_4d0Al2mMu$$S6vEMonQTdRxbVFvwRKmI",
+    "source" : "MS8RFAZAq7C3HkCAEHOzz$$NzOJhjf4ncWobaP1deiez",
+    "sourcePort" : "MQ6bktrTfHLER0ZP_bH7X$$ea7u1fqLsdBeUXCXuHdFZ",
+    "target" : "vzCDtoT0EaDSgdL-rag8Z$$fIuoBvy5wRIj6Xn9_H8yx",
+    "targetPort" : "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA"
+  }, {
+    "id" : "snpV8CruKx4_U3aFBPB7F$$u0C2UXcu53xGQxjJiJb--",
+    "source" : "vzCDtoT0EaDSgdL-rag8Z$$fIuoBvy5wRIj6Xn9_H8yx",
+    "sourcePort" : "mN0__WP39Mw5sop29LYtH$$8pINFdTz8DDeYv0pIXUBI",
+    "target" : "oFDiOP8ur576tztJ1Vgsk$$beU2V743k4zSnKkNaTOq4",
+    "targetPort" : "B79rH7IUy3za48Fq9o7gs$$_1tnB3VYJ-j3iATMQqkje"
+  }, {
+    "id" : "x9HEmjIeezg0B-_IRWE2Q",
+    "source" : "oFDiOP8ur576tztJ1Vgsk$$beU2V743k4zSnKkNaTOq4",
+    "sourcePort" : "wnRHc19kNXVZNVIFWcdD0$$UMRbKaub6Ko85pLAgXO13",
+    "target" : "LfQkHk5yVcjcNmbrrjVo3$$zFf1OQJ0Rf41gdJPBuI7K",
+    "targetPort" : "T1Du7V8ITFXWXWYajYLbS$$YyxId3KbQctrLYcz3MXib"
+  }, {
+    "id" : "cz_FEnrlTMyJ3zU2dhaR-",
+    "source" : "oFDiOP8ur576tztJ1Vgsk$$beU2V743k4zSnKkNaTOq4",
+    "sourcePort" : "wnRHc19kNXVZNVIFWcdD0$$UMRbKaub6Ko85pLAgXO13",
+    "target" : "uO5j6UJCawbUME5BPHzqD$$92Ra0VfHiH6WUCQSQa-72",
+    "targetPort" : "UNeb_8EdUFXobEG79MYW-$$lHzvDwBah4M25ZTJjgb25"
+  } ],
+  "processes" : {
+    "uO5j6UJCawbUME5BPHzqD$$92Ra0VfHiH6WUCQSQa-72" : {
+      "id" : "uO5j6UJCawbUME5BPHzqD$$92Ra0VfHiH6WUCQSQa-72",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "combined_taxi_data_gcp",
+        "slug" : "combined_taxi_data_gcp",
+        "x" : 520,
+        "y" : 0,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "removalCondition" : "Config.provider == 'gcp'"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UNeb_8EdUFXobEG79MYW-$$lHzvDwBah4M25ZTJjgb25",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "VendorID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each taxi vendor. It stores numerical values in integer data type, providing a way to differentiate between different taxi vendors.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "pickup_datetime",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dropoff_datetime",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "passenger_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "trip_distance",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "RatecodeID",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "store_and_fwd_flag",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "PULocationID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "DOLocationID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "payment_type",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "fare_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "extra",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mta_tax",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tip_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tolls_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "improvement_surcharge",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "total_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "congestion_surcharge",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "additional_information",
+              "type" : {
+                "type" : "map",
+                "keyType" : "string",
+                "valueType" : "double",
+                "valueContainsNull" : true
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "taxi_type",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "month",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "pickup_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dropoff_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/combined_taxi_data_gcp"
+      }
+    },
+    "vzCDtoT0EaDSgdL-rag8Z$$fIuoBvy5wRIj6Xn9_H8yx" : {
+      "id" : "vzCDtoT0EaDSgdL-rag8Z$$fIuoBvy5wRIj6Xn9_H8yx",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "taxi_data_reformatting",
+        "slug" : "taxi_data_reformatting",
+        "x" : 160,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "VendorID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each taxi vendor. It stores numerical values in integer data type, providing a way to differentiate between different taxi vendors.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tpep_pickup_datetime",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tpep_dropoff_datetime",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "passenger_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "trip_distance",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "RatecodeID",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "store_and_fwd_flag",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "PULocationID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "DOLocationID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "payment_type",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "fare_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "extra",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mta_tax",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tip_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tolls_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "improvement_surcharge",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "total_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "congestion_surcharge",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Airport_fee",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "mN0__WP39Mw5sop29LYtH$$8pINFdTz8DDeYv0pIXUBI",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "VendorID",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "VendorID"
+          },
+          "description" : ""
+        }, {
+          "target" : "pickup_datetime",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "tpep_pickup_datetime"
+          },
+          "description" : ""
+        }, {
+          "target" : "dropoff_datetime",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "tpep_dropoff_datetime"
+          },
+          "description" : ""
+        }, {
+          "target" : "passenger_count",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "passenger_count"
+          },
+          "description" : ""
+        }, {
+          "target" : "trip_distance",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "trip_distance"
+          },
+          "description" : ""
+        }, {
+          "target" : "RatecodeID",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "RatecodeID"
+          },
+          "description" : ""
+        }, {
+          "target" : "store_and_fwd_flag",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "store_and_fwd_flag"
+          },
+          "description" : ""
+        }, {
+          "target" : "PULocationID",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "PULocationID"
+          },
+          "description" : ""
+        }, {
+          "target" : "DOLocationID",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "DOLocationID"
+          },
+          "description" : ""
+        }, {
+          "target" : "payment_type",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "payment_type"
+          },
+          "description" : ""
+        }, {
+          "target" : "fare_amount",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "fare_amount"
+          },
+          "description" : ""
+        }, {
+          "target" : "extra",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "extra"
+          },
+          "description" : ""
+        }, {
+          "target" : "mta_tax",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "mta_tax"
+          },
+          "description" : ""
+        }, {
+          "target" : "tip_amount",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "tip_amount"
+          },
+          "description" : ""
+        }, {
+          "target" : "tolls_amount",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "tolls_amount"
+          },
+          "description" : ""
+        }, {
+          "target" : "improvement_surcharge",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "improvement_surcharge"
+          },
+          "description" : ""
+        }, {
+          "target" : "total_amount",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "total_amount"
+          },
+          "description" : ""
+        }, {
+          "target" : "congestion_surcharge",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "congestion_surcharge"
+          },
+          "description" : ""
+        }, {
+          "target" : "additional_information",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "map('Airport_fee',Airport_fee)"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##DOLocationID", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##VendorID", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##passenger_count", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##improvement_surcharge", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##extra", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##store_and_fwd_flag", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##tolls_amount", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##RatecodeID", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##total_amount", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##tpep_pickup_datetime", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##trip_distance", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##PULocationID", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##Airport_fee", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##congestion_surcharge", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##payment_type", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##mta_tax", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##fare_amount", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##tpep_dropoff_datetime", "TnK0ehBye5Fmy30MTptLC$$UWaNwq6lIcXB38UQ56ZrA##tip_amount" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.14&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "oFDiOP8ur576tztJ1Vgsk$$beU2V743k4zSnKkNaTOq4" : {
+      "id" : "oFDiOP8ur576tztJ1Vgsk$$beU2V743k4zSnKkNaTOq4",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "add_taxi_type_year_month",
+        "slug" : "add_taxi_type_year_month",
+        "x" : 340,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "B79rH7IUy3za48Fq9o7gs$$_1tnB3VYJ-j3iATMQqkje",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "VendorID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each taxi vendor. It stores numerical values in integer data type, providing a way to differentiate between different taxi vendors.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "pickup_datetime",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dropoff_datetime",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "passenger_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "trip_distance",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "RatecodeID",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "store_and_fwd_flag",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "PULocationID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "DOLocationID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "payment_type",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "fare_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "extra",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mta_tax",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tip_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tolls_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "improvement_surcharge",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "total_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "congestion_surcharge",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "additional_information",
+              "type" : {
+                "type" : "map",
+                "keyType" : "string",
+                "valueType" : "double",
+                "valueContainsNull" : true
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "wnRHc19kNXVZNVIFWcdD0$$UMRbKaub6Ko85pLAgXO13",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "sql",
+        "importString" : "",
+        "transformations" : [ {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddReplaceColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "taxi_type",
+            "expression" : {
+              "format" : "sql",
+              "expression" : "'$taxi_type'"
+            }
+          }
+        }, {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddReplaceColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "year",
+            "expression" : {
+              "format" : "sql",
+              "expression" : "'$year'"
+            }
+          }
+        }, {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddReplaceColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "month",
+            "expression" : {
+              "format" : "sql",
+              "expression" : "'$month'"
+            }
+          }
+        }, {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddReplaceColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "pickup_date",
+            "expression" : {
+              "format" : "sql",
+              "expression" : "CAST(pickup_datetime as date)"
+            }
+          }
+        }, {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddReplaceColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "dropoff_date",
+            "expression" : {
+              "format" : "sql",
+              "expression" : "CAST(dropoff_datetime as date)"
+            }
+          }
+        } ],
+        "activeTab" : "transformations",
+        "columnsSelector" : [ "B79rH7IUy3za48Fq9o7gs$$_1tnB3VYJ-j3iATMQqkje##pickup_datetime", "B79rH7IUy3za48Fq9o7gs$$_1tnB3VYJ-j3iATMQqkje##dropoff_datetime" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.14&projectSubscriptionProjectId=12654&path=gems/SchemaTransform",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "MS8RFAZAq7C3HkCAEHOzz$$NzOJhjf4ncWobaP1deiez" : {
+      "id" : "MS8RFAZAq7C3HkCAEHOzz$$NzOJhjf4ncWobaP1deiez",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "yellow_taxi_raw",
+        "slug" : "yellow_taxi_raw",
+        "x" : -20,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "MQ6bktrTfHLER0ZP_bH7X$$ea7u1fqLsdBeUXCXuHdFZ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/yellow_taxi_raw"
+      }
+    },
+    "LfQkHk5yVcjcNmbrrjVo3$$zFf1OQJ0Rf41gdJPBuI7K" : {
+      "id" : "LfQkHk5yVcjcNmbrrjVo3$$zFf1OQJ0Rf41gdJPBuI7K",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "combined_taxi_data",
+        "slug" : "combined_taxi_data",
+        "x" : 520,
+        "y" : 180,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "removalCondition" : "Config.provider == 'databricks'"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "T1Du7V8ITFXWXWYajYLbS$$YyxId3KbQctrLYcz3MXib",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "VendorID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each taxi vendor. It stores numerical values in integer data type, providing a way to differentiate between different taxi vendors.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "pickup_datetime",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dropoff_datetime",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "passenger_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "trip_distance",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "RatecodeID",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "store_and_fwd_flag",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "PULocationID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "DOLocationID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "payment_type",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "fare_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "extra",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mta_tax",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tip_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tolls_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "improvement_surcharge",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "total_amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "congestion_surcharge",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "additional_information",
+              "type" : {
+                "type" : "map",
+                "keyType" : "string",
+                "valueType" : "double",
+                "valueContainsNull" : true
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "taxi_type",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "month",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "pickup_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dropoff_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/combined_taxi_data"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

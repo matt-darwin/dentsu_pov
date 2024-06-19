@@ -1,0 +1,5 @@
+{
+  "provider" : "databricks",
+  "cloud_storage_path" : "dbfs:/nyc_taxi/raw/",
+  "taxi_type" : "green"
+}
