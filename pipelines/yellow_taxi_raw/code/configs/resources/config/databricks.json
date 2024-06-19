@@ -1,5 +1,5 @@
 {
-  "cloud_storage_path" : "dbfs:/nyc_taxi/raw/",
+  "cloud_storage_path" : "dbfs:/dentsu_pov/raw/",
   "taxi_type" : "yellow",
   "provider" : "databricks"
 }

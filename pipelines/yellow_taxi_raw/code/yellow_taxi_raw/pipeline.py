@@ -10,12 +10,7 @@ def pipeline(spark: SparkSession) -> None:
     df_yellow_taxi_raw = yellow_taxi_raw(spark)
     df_taxi_data_reformatting = taxi_data_reformatting(spark, df_yellow_taxi_raw)
     df_add_taxi_type_year_month = add_taxi_type_year_month(spark, df_taxi_data_reformatting)
-
-    if Config.provider == 'gcp':
-        combined_taxi_data_gcp(spark, df_add_taxi_type_year_month)
-
-    if Config.provider == 'databricks':
-        combined_taxi_data(spark, df_add_taxi_type_year_month)
+    combined_taxi_data(spark, df_add_taxi_type_year_month)
 
 def main():
     spark = SparkSession.builder\

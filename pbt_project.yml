@@ -25,7 +25,6 @@ pipelines:
       - datasets/zones_load
       outputs:
       - datasets/zones
-      - datasets/zones_gcp_transformed
     subgraphs: []
     dependencies: {}
   pipelines/green_taxi_raw:
@@ -41,7 +40,6 @@ pipelines:
       - datasets/green_taxi_raw
       outputs:
       - datasets/combined_taxi_data
-      - datasets/combined_taxi_data_gcp
     subgraphs: []
     dependencies: {}
   pipelines/weather_data:
@@ -55,7 +53,6 @@ pipelines:
     datasets:
       inputs: []
       outputs:
-      - datasets/weather_precipitation_sum
       - datasets/weather_precipitation_sum_dbx
     subgraphs: []
     dependencies: {}
@@ -72,20 +69,6 @@ pipelines:
       - datasets/yellow_taxi_raw
       outputs:
       - datasets/combined_taxi_data
-      - datasets/combined_taxi_data_gcp
-    subgraphs: []
-    dependencies: {}
-  pipelines/pull_files_from_url:
-    name: pull_files_from_url
-    description: ''
-    author: matthew+public_demo@prophecy.io
-    mode: batch
-    artefactID: ''
-    language: python
-    createdAt: '2024-05-01 15:00:51'
-    datasets:
-      inputs: []
-      outputs: []
     subgraphs: []
     dependencies: {}
   pipelines/pull_files_from_url_dbx:
@@ -112,23 +95,6 @@ pipelines:
     datasets:
       inputs:
       - datasets/weather_data_source
-      outputs:
-      - datasets/weather_precipitation_sum
-      - datasets/weather_precipitation_sum_dbx
-    subgraphs: []
-    dependencies: {}
-  pipelines/table_iterator_example:
-    name: table_iterator_example
-    description: ''
-    author: matthew+public_demo@prophecy.io
-    mode: batch
-    artefactID: ''
-    language: python
-    createdAt: '2024-05-31 10:10:26'
-    datasets:
-      inputs:
-      - datasets/taxi_data_iterator_source
-      - datasets/zones
       outputs: []
     subgraphs: []
     dependencies: {}
@@ -211,58 +177,6 @@ datasets:
         description: ''
         author: matthew+public_demo@prophecy.io
         createdAt: '2024-03-28 15:46:09'
-  datasets/transformed_zones_bq:
-    name: transformed_zones_bq
-    description: ''
-    author: matthew+public_demo@prophecy.io
-    createdAt: '2024-05-02 12:46:02'
-    mode: batch
-    physicalDatasets:
-      dataproc_cluster:
-        fabricId: 11971
-        datasetType: Warehouse
-        description: ''
-        author: matthew+public_demo@prophecy.io
-        createdAt: '2024-05-02 12:46:02'
-  datasets/zones_gcp_transformed:
-    name: zones_gcp_transformed
-    description: ''
-    author: matthew+public_demo@prophecy.io
-    createdAt: '2024-05-02 12:51:33'
-    mode: batch
-    physicalDatasets:
-      dataproc_cluster:
-        fabricId: 11971
-        datasetType: File
-        description: ''
-        author: matthew+public_demo@prophecy.io
-        createdAt: '2024-05-02 12:51:33'
-  datasets/combined_taxi_data_gcp:
-    name: combined_taxi_data_gcp
-    description: ''
-    author: matthew+public_demo@prophecy.io
-    createdAt: '2024-05-02 12:52:54'
-    mode: batch
-    physicalDatasets:
-      dataproc_cluster:
-        fabricId: 11971
-        datasetType: File
-        description: ''
-        author: matthew+public_demo@prophecy.io
-        createdAt: '2024-05-02 12:52:54'
-  datasets/weather_precipitation_sum:
-    name: weather_precipitation_sum
-    description: ''
-    author: matthew+public_demo@prophecy.io
-    createdAt: '2024-05-03 09:59:24'
-    mode: batch
-    physicalDatasets:
-      dataproc_cluster:
-        fabricId: 11971
-        datasetType: File
-        description: ''
-        author: matthew+public_demo@prophecy.io
-        createdAt: '2024-05-03 09:59:24'
   datasets/weather_precipitation_sum_dbx:
     name: weather_precipitation_sum_dbx
     description: ''
@@ -327,6 +241,7 @@ functions:
   udafs: {}
   expressions: {}
   airflowFunctions: {}
+  businessRules: {}
 subgraphs: {}
 sqlModels: {}
 sqlSnapshots: {}
@@ -340,15 +255,19 @@ dependencies:
 - type: plibMaven
   modifiedAt: '2024-05-31T12:01:58.309607Z'
   name: plibMaven
-  version: 7.1.102
+  version: 8.0.11
   id: '235665184'
   createdAt: '2024-05-31T12:01:58.309481Z'
+  enabled: true
+  entity: Project
 - type: plibPypi
   modifiedAt: '2024-05-31T12:01:58.30969Z'
   name: plibPypi
-  version: 1.8.19
+  version: 1.9.5
   id: '611966800'
   createdAt: '2024-05-31T12:01:58.309662Z'
+  enabled: true
+  entity: Project
 - type: pypi
   modifiedAt: '2024-03-26T10:22:13.143Z'
   package: databricks-mosaic
@@ -394,18 +313,18 @@ projectDependencies:
     projectUID: 12655
     projectName: ProphecyWarehousePython
     repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12655.git&subPath=
-    version: 0.0.6
+    version: 0.0.8
     isDefault: true
     author: null
-    createdAt: '2024-05-22 09:18:08'
+    createdAt: '2024-06-19 16:43:06'
   '12654':
     projectUID: 12654
     projectName: ProphecySparkBasicsPython
     repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=
-    version: 0.2.14
+    version: 0.2.25
     isDefault: true
     author: null
-    createdAt: '2024-05-22 09:18:06'
+    createdAt: '2024-06-19 16:43:02'
 flags:
   shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}

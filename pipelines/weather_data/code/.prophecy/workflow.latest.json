@@ -6,8 +6,8 @@
     "codeGenConfiguration" : {
       "editableConfig" : true,
       "plibVersion" : {
-        "mavenVersion" : "7.1.97",
-        "pyPiVersion" : "1.8.19"
+        "mavenVersion" : "8.0.11",
+        "pyPiVersion" : "1.9.5"
       }
     },
     "id" : "1",
@@ -147,12 +147,6 @@
     "sourcePort" : "qiAMPZObhtb3rNPEh8DAk$$H9axbhcTW0pc_nDAhRamg",
     "target" : "39-QwE2D36Eqy0R0atYyc$$6bJMsiZQ7PHrfsic9Q9OB",
     "targetPort" : "UubNpoTDV-rDtw1gVr83a$$4JctW731IMFUQ7YTEourT"
-  }, {
-    "id" : "2saP1mDNM945NHCeatBA_$$CuvLi8STE4Iqgjxuf_2nk",
-    "source" : "39-QwE2D36Eqy0R0atYyc$$6bJMsiZQ7PHrfsic9Q9OB",
-    "sourcePort" : "3v6OGcFJRfb4B2htsxgMN$$uv9p3C0DzL5C2Re18WOsS",
-    "target" : "1TsVX4U_yBAht8-7emb1B$$utAIgCEWaXbSm49plWBRY",
-    "targetPort" : "2RoxdkfOENOl1JpzZm_qV$$H0w3_AGJ2bh7ilPKGc6ks"
   }, {
     "id" : "4SiZKPrUMbKeR9Lfm5-MC",
     "source" : "39-QwE2D36Eqy0R0atYyc$$6bJMsiZQ7PHrfsic9Q9OB",
@@ -370,7 +364,7 @@
         "columnsSelector" : [ "UubNpoTDV-rDtw1gVr83a$$4JctW731IMFUQ7YTEourT##metrics_time" ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.14&projectSubscriptionProjectId=12654&path=gems/SchemaTransform",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=12654&path=gems/SchemaTransform",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -567,7 +561,7 @@
         "columnsSelector" : [ ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.14&projectSubscriptionProjectId=12654&path=gems/SchemaTransform",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=12654&path=gems/SchemaTransform",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -738,7 +732,7 @@
       },
       "componentInfo" : {
         "gemId" : "gems/WeatherDataGet",
-        "projectName" : "nyc_taxi_engineering"
+        "projectName" : "dentsu_pov"
       }
     },
     "wtssgBdjRsbV_H6vulpGE$$jiSvS2WyefGNso8JYGoRh" : {
@@ -985,7 +979,7 @@
         "delimiter" : "_"
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.14&projectSubscriptionProjectId=12654&path=gems/FlattenSchema",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=12654&path=gems/FlattenSchema",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -996,12 +990,13 @@
         "label" : "weather_precipitation_sum_dbx",
         "slug" : "weather_precipitation_sum_dbx",
         "x" : 120,
-        "y" : -100,
+        "y" : -160,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "removalCondition" : "Config.provider == 'databricks'"
+        "comment" : "Saves weather precipitation data to a Delta table partitioned by year, month, latitude, and longitude.",
+        "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ {
@@ -1074,93 +1069,6 @@
       },
       "properties" : {
         "datasetId" : "datasets/weather_precipitation_sum_dbx"
-      }
-    },
-    "1TsVX4U_yBAht8-7emb1B$$utAIgCEWaXbSm49plWBRY" : {
-      "id" : "1TsVX4U_yBAht8-7emb1B$$utAIgCEWaXbSm49plWBRY",
-      "component" : "Target",
-      "metadata" : {
-        "label" : "weather_precipitation_sum",
-        "slug" : "weather_precipitation_sum",
-        "x" : 120,
-        "y" : -280,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false,
-        "removalCondition" : "Config.provider == 'gcp'"
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "2RoxdkfOENOl1JpzZm_qV$$H0w3_AGJ2bh7ilPKGc6ks",
-          "slug" : "in0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "json_content_latitude",
-              "type" : "decimal(6,4)",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "json_content_longitude",
-              "type" : "decimal(6,4)",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "metrics_time",
-              "type" : "date",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "metrics_precipitation_sum",
-              "type" : "decimal(4,1)",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "year",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "month",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
-        } ],
-        "outputs" : [ ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/weather_precipitation_sum"
       }
     }
   },

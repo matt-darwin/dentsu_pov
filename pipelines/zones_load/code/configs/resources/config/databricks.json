@@ -1,4 +1,4 @@
 {
-  "storage_location" : "dbfs:/nyc_taxi/raw/zone_lookup/",
+  "storage_location" : "dbfs:/dentsu_pov/raw/zone_lookup/",
   "provider" : "databricks"
 }

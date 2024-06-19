@@ -2,5 +2,4 @@ from .weather_data_get import weather_data_get
 from .flatten_json_schema_2 import flatten_json_schema_2
 from .SchemaTransform_1_2 import SchemaTransform_1_2
 from .weather_precipitation_sum_dbx import weather_precipitation_sum_dbx
-from .weather_precipitation_sum import weather_precipitation_sum
 from .add_year_month_columns import add_year_month_columns

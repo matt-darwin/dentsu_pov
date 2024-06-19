@@ -17,7 +17,7 @@ schema:
       mappings: []
       tags: []
   - name: metrics_time
-    type: string
+    type: date
     nullable: true
     metadata:
       description: ''

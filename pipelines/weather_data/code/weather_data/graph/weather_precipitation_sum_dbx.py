@@ -12,4 +12,4 @@ def weather_precipitation_sum_dbx(spark: SparkSession, in0: DataFrame):
         .option("overwriteSchema", True)\
         .mode("overwrite")\
         .partitionBy("year", "month", "json_content_latitude", "json_content_longitude")\
-        .saveAsTable("`nyc_taxi`.`field_nyc_taxi`.`weather_data_precipitation`")
+        .saveAsTable("`dentsu_pov`.`dentsu_pov`.`weather_data_precipitation`")

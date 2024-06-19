@@ -7,4 +7,4 @@ from zones_load.config.ConfigStore import *
 from zones_load.udfs.UDFs import *
 
 def zones(spark: SparkSession, in0: DataFrame):
-    in0.write.format("delta").mode("overwrite").saveAsTable("`nyc_taxi`.`field_nyc_taxi`.`zones`")
+    in0.write.format("delta").mode("overwrite").saveAsTable("`dentsu_pov`.`dentsu_pov`.`zones`")

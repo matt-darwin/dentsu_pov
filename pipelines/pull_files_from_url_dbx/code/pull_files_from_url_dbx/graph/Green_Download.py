@@ -88,7 +88,7 @@ def Green_Download(spark: SparkSession):
         gcp_project = "", 
         service_account_file_path = "", 
         platform = "Databricks", 
-        dbfs_path = "dbfs:/nyc_taxi/raw/green/2024/01/"
+        dbfs_path = "dbfs:/dentsu_pov/raw/green/2024/01/"
     )
     # This method contains logic used to generate the spark code from the given inputs.
     import urllib.request

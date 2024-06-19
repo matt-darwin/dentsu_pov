@@ -6,8 +6,8 @@
     "codeGenConfiguration" : {
       "editableConfig" : true,
       "plibVersion" : {
-        "mavenVersion" : "7.1.97",
-        "pyPiVersion" : "1.8.19"
+        "mavenVersion" : "8.0.11",
+        "pyPiVersion" : "1.9.5"
       }
     },
     "id" : "1",
@@ -83,7 +83,9 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "Downloads a file from a specified URL and stores it in a target location. The code supports both GCP and Databricks platforms.",
+        "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ ],
@@ -99,12 +101,12 @@
         "service_account_file_path" : "",
         "target_bucket_filepath" : "",
         "platform" : "Databricks",
-        "dbfs_path" : "dbfs:/nyc_taxi/raw/zone_lookup/",
+        "dbfs_path" : "dbfs:/dentsu_pov/raw/zone_lookup/",
         "gcp_project" : ""
       },
       "componentInfo" : {
         "gemId" : "gems/FileURLDownload",
-        "projectName" : "nyc_taxi_engineering"
+        "projectName" : "dentsu_pov"
       }
     },
     "xm2M6V_mOXXeJPQG5XjIk$$5uUY5durpfnLpbF-Cb4eL" : {
@@ -118,7 +120,9 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "Downloads a file from a given URL and saves it to a specified location, either on a local file system or on a cloud storage platform (GCP or Databricks). The downloaded file can be in the Parquet format.",
+        "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ ],
@@ -134,12 +138,12 @@
         "service_account_file_path" : "",
         "target_bucket_filepath" : "",
         "platform" : "Databricks",
-        "dbfs_path" : "dbfs:/nyc_taxi/raw/yellow/2024/01/",
+        "dbfs_path" : "dbfs:/dentsu_pov/raw/yellow/2024/01/",
         "gcp_project" : ""
       },
       "componentInfo" : {
         "gemId" : "gems/FileURLDownload",
-        "projectName" : "nyc_taxi_engineering"
+        "projectName" : "dentsu_pov"
       }
     },
     "ZNM16xEANYXgWCvcszShO$$H4R8lsu0GUHNRmww7AgEf" : {
@@ -169,12 +173,12 @@
         "service_account_file_path" : "",
         "target_bucket_filepath" : "",
         "platform" : "Databricks",
-        "dbfs_path" : "dbfs:/nyc_taxi/raw/green/2024/01/",
+        "dbfs_path" : "dbfs:/dentsu_pov/raw/green/2024/01/",
         "gcp_project" : ""
       },
       "componentInfo" : {
         "gemId" : "gems/FileURLDownload",
-        "projectName" : "nyc_taxi_engineering"
+        "projectName" : "dentsu_pov"
       }
     }
   },

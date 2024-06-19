@@ -88,7 +88,7 @@ def zones_download(spark: SparkSession):
         gcp_project = "", 
         service_account_file_path = "", 
         platform = "Databricks", 
-        dbfs_path = "dbfs:/nyc_taxi/raw/zone_lookup/"
+        dbfs_path = "dbfs:/dentsu_pov/raw/zone_lookup/"
     )
     # This method contains logic used to generate the spark code from the given inputs.
     import urllib.request

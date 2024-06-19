@@ -8,12 +8,7 @@ from zones_load.graph import *
 
 def pipeline(spark: SparkSession) -> None:
     df_zones_load = zones_load(spark)
-
-    if Config.provider == 'gcp':
-        zones_gcp_transformed(spark, df_zones_load)
-
-    if Config.provider == 'databricks':
-        zones(spark, df_zones_load)
+    zones(spark, df_zones_load)
 
 def main():
     spark = SparkSession.builder\

@@ -6,8 +6,8 @@
     "codeGenConfiguration" : {
       "editableConfig" : true,
       "plibVersion" : {
-        "mavenVersion" : "7.1.97",
-        "pyPiVersion" : "1.8.19"
+        "mavenVersion" : "8.0.11",
+        "pyPiVersion" : "1.9.5"
       }
     },
     "id" : "1",
@@ -88,12 +88,6 @@
     "configurationVersion" : "v2"
   },
   "connections" : [ {
-    "id" : "fm9sf2dSznl1m9O-HV0DJ$$JYUTQ5KgaK0FEYWbiY6pd",
-    "source" : "wUFm2yiLDa79rOlyhAenm$$QtCoOJy1HezdokyKbRzVU",
-    "sourcePort" : "RfjCbLjoQyF4MyXjeq3L7$$EKih87APjk5zn1yx6qUsf",
-    "target" : "uRuaPNqnINKb8zgyz1YR9$$goEf4WrL6enFlPCQaJS1m",
-    "targetPort" : "2eX2z4lWs5aYc3RFdnWlF$$2noV7r-xPawxraCKN2EYb"
-  }, {
     "id" : "cnApTBS9-RhhD-IZMf9jA",
     "source" : "wUFm2yiLDa79rOlyhAenm$$QtCoOJy1HezdokyKbRzVU",
     "sourcePort" : "RfjCbLjoQyF4MyXjeq3L7$$EKih87APjk5zn1yx6qUsf",
@@ -128,75 +122,6 @@
         "datasetId" : "datasets/zones_load"
       }
     },
-    "uRuaPNqnINKb8zgyz1YR9$$goEf4WrL6enFlPCQaJS1m" : {
-      "id" : "uRuaPNqnINKb8zgyz1YR9$$goEf4WrL6enFlPCQaJS1m",
-      "component" : "Target",
-      "metadata" : {
-        "label" : "zones_gcp_transformed",
-        "slug" : "zones_gcp_transformed",
-        "x" : -300,
-        "y" : -280,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false,
-        "removalCondition" : "Config.provider == 'gcp'"
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "2eX2z4lWs5aYc3RFdnWlF$$2noV7r-xPawxraCKN2EYb",
-          "slug" : "in0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "LocationID",
-              "type" : "double",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "Borough",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "Zone",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "service_zone",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
-        } ],
-        "outputs" : [ ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/zones_gcp_transformed"
-      }
-    },
     "HsL5f4PKa9SBp7DO4BEJ1$$s4Y0-PJ5Jwno_iknYArDS" : {
       "id" : "HsL5f4PKa9SBp7DO4BEJ1$$s4Y0-PJ5Jwno_iknYArDS",
       "component" : "Target",
@@ -204,12 +129,13 @@
         "label" : "zones",
         "slug" : "zones",
         "x" : -300,
-        "y" : -120,
+        "y" : -200,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "removalCondition" : "Config.provider == 'databricks'"
+        "comment" : "Saves the input DataFrame as a Delta table named 'zones' in the 'dentsu_pov' database.",
+        "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ {

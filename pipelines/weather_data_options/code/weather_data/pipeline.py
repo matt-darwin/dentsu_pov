@@ -11,10 +11,6 @@ def pipeline(spark: SparkSession) -> None:
     df_json_to_struct_conversion = json_to_struct_conversion(spark, df_weather_data_source)
     df_SchemaTransform_1 = SchemaTransform_1(spark, df_json_to_struct_conversion)
     df_reformat_content_string_1 = reformat_content_string_1(spark, df_weather_data_source)
-    df_weather_data_get = weather_data_get(spark)
-    df_SchemaTransform_1_2 = SchemaTransform_1_2(spark, df_weather_data_get)
-    df_flatten_json_schema_2 = flatten_json_schema_2(spark, df_SchemaTransform_1_2)
-    df_add_year_month_columns = add_year_month_columns(spark, df_flatten_json_schema_2)
     df_reformat_content_string = reformat_content_string(spark, df_weather_data_source)
     df_SchemaTransform_1_1 = SchemaTransform_1_1(spark, df_reformat_content_string)
     df_flatten_json_schema_1 = flatten_json_schema_1(spark, df_SchemaTransform_1_1)
@@ -22,12 +18,6 @@ def pipeline(spark: SparkSession) -> None:
     df_SchemaTransform_1_1_1 = SchemaTransform_1_1_1(spark, df_ParseJson_1)
     df_flatten_json_schema_1_1 = flatten_json_schema_1_1(spark, df_SchemaTransform_1_1_1)
     df_flatten_json_schema = flatten_json_schema(spark, df_SchemaTransform_1)
-
-    if Config.provider == 'databricks':
-        weather_precipitation_sum_dbx(spark, df_add_year_month_columns)
-
-    if Config.provider == 'gcp':
-        weather_precipitation_sum(spark, df_add_year_month_columns)
 
 def main():
     spark = SparkSession.builder\

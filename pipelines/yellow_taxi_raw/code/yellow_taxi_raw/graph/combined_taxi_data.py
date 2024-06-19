@@ -12,4 +12,4 @@ def combined_taxi_data(spark: SparkSession, in0: DataFrame):
         .option("overwriteSchema", True)\
         .mode("overwrite")\
         .partitionBy("taxi_type", "year", "month")\
-        .saveAsTable("`nyc_taxi`.`field_nyc_taxi`.`combined_taxi_data`")
+        .saveAsTable("`dentsu_pov`.`dentsu_pov`.`combined_taxi_data`")
